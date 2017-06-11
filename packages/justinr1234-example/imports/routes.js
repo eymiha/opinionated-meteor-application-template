@@ -18,6 +18,7 @@ export const routes = {
   },
   EXAMPLE_EDIT: {
     path: '/example/:_id',
+    roles: 'editor',
   },
 };
 

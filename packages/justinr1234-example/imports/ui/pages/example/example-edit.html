@@ -1,14 +1,18 @@
 <template name="EXAMPLE_EDIT">
   {{#If_Logged_In}}
-    <div class="ui text container x-page-top">
-      {{> quickForm
-        collection=collection
-        template="semanticUI"
-        id="UPDATE_EXAMPLE_EDIT_FORM"
-        type="update"
-        doc=getDoc
-        buttonContent="Update"
-      }}
-    </div>
+    {{#if Authorized}}
+      <div class="ui text container x-page-top">
+        {{> quickForm
+          collection=collection
+          template="semanticUI"
+          id="UPDATE_EXAMPLE_EDIT_FORM"
+          type="update"
+          doc=getDoc
+          buttonContent="Update"
+        }}
+      </div>
+    {{else}}
+      Not authorized to edit.
+    {{/if}}
   {{/If_Logged_In}}
 </template>
